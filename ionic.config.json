@@ -1,0 +1,7 @@
+{
+  "name": "topv3",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
