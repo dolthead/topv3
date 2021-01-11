@@ -2,6 +2,9 @@
   <ion-page>
     <ion-header :translucent="true">
       <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
         <ion-title>Topzee</ion-title>
         <ion-buttons slot="end">
           <ion-button @click="openAbout">
@@ -22,7 +25,9 @@
       </ion-header>
 
       <div id="container">
-        <ion-button router-link="/game" expand="block">Play</ion-button>
+        <p>
+          Game
+        </p>
       </div>
     </ion-content>
   </ion-page>
@@ -40,12 +45,13 @@ import {
   IonButton,
   IonIcon,
   modalController,
+  IonBackButton,
 } from "@ionic/vue";
 import { defineComponent } from "vue";
-import About from "./About.vue";
+import About from './About.vue';
 
 export default defineComponent({
-  name: "Home",
+  name: "Game",
   components: {
     IonContent,
     IonHeader,
@@ -55,16 +61,17 @@ export default defineComponent({
     IonButtons,
     IonButton,
     IonIcon,
+    IonBackButton,
   },
   setup() {
     const openAbout = async () => {
       const modal = await modalController.create({
-        component: About,
-        cssClass: "my-custom-class",
-        componentProps: {
-          title: "About",
-        },
-      });
+          component: About,
+          cssClass: 'my-custom-class',
+          componentProps: {
+            title: 'About'
+          },
+        });
       return modal.present();
     };
     return {
@@ -78,23 +85,28 @@ export default defineComponent({
 <style scoped>
 #container {
   text-align: center;
+
   position: absolute;
   left: 0;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  padding: 2vw;
 }
+
 #container strong {
   font-size: 20px;
   line-height: 26px;
 }
+
 #container p {
   font-size: 16px;
   line-height: 22px;
+
   color: #8c8c8c;
+
   margin: 0;
 }
+
 #container a {
   text-decoration: none;
 }
