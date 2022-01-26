@@ -2,9 +2,9 @@
   <ion-page>
     <ion-header>
       <ion-toolbar color="primary">
-        <ion-title>About Topzee</ion-title>
+        <ion-title>Rules</ion-title>
         <ion-buttons slot="end">
-          <ion-button @click="closeAbout">
+          <ion-button @click="closeRules">
             <ion-icon slot="icon-only" :icon="closeOutline"></ion-icon>
           </ion-button>
         </ion-buttons>
@@ -13,7 +13,7 @@
 
     <ion-content :fullscreen="true">
       <div id="container">
-        <ion-button expand="block" @click="closeAbout">Close</ion-button>
+        <ion-button expand="block" @click="closeRules">Close</ion-button>
       </div>
     </ion-content>
   </ion-page>
@@ -46,12 +46,12 @@ export default defineComponent({
     IonIcon,
   },
   setup() {
-    const closeAbout = () => {
+    const closeRules = () => {
       modalController.dismiss();
     };
     return {
       closeOutline,
-      closeAbout,
+      closeRules,
     };
   },
 });

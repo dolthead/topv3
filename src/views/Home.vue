@@ -1,6 +1,6 @@
 <template>
   <ion-page>
-    <ion-header :translucent="true">
+    <ion-header>
       <ion-toolbar color="primary">
         <ion-title>Topzee</ion-title>
         <ion-buttons slot="end">
@@ -15,13 +15,30 @@
     </ion-header>
 
     <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Topzee</ion-title>
-        </ion-toolbar>
-      </ion-header>
-
       <div id="container">
+        <ion-card>
+          <ion-card-content>
+            <div>img</div>
+            <ion-list>
+              <ion-item lines="none">
+                <ion-label>Last game</ion-label>
+                <ion-note slot="end">99</ion-note>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label>Games played</ion-label>
+                <ion-note slot="end">99</ion-note>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label>Average</ion-label>
+                <ion-note slot="end">99</ion-note>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label>High score</ion-label>
+                <ion-note slot="end">99</ion-note>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
         <ion-button router-link="/game" expand="block">Play</ion-button>
       </div>
     </ion-content>
@@ -40,6 +57,12 @@ import {
   IonButton,
   IonIcon,
   modalController,
+  IonCard,
+  IonCardContent,
+  IonList,
+  IonItem,
+  IonLabel,
+  IonNote,
 } from "@ionic/vue";
 import { defineComponent } from "vue";
 import About from "./About.vue";
@@ -55,6 +78,12 @@ export default defineComponent({
     IonButtons,
     IonButton,
     IonIcon,
+    IonCard,
+    IonCardContent,
+    IonList,
+    IonItem,
+    IonLabel,
+    IonNote,
   },
   setup() {
     const openAbout = async () => {
@@ -78,24 +107,8 @@ export default defineComponent({
 <style scoped>
 #container {
   text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 2vw;
 }
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-  color: #8c8c8c;
-  margin: 0;
-}
-#container a {
-  text-decoration: none;
+ion-note {
+  --color: black;
 }
 </style>
