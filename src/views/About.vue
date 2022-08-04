@@ -19,23 +19,9 @@
   </ion-page>
 </template>
 
-<script lang="ts">
-import { closeOutline } from "ionicons/icons";
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-  IonButtons,
-  IonButton,
-  IonIcon,
-  modalController,
-} from "@ionic/vue";
-import { defineComponent } from "vue";
-export default defineComponent({
-  name: "About",
-  components: {
+<script setup lang="ts">
+  import { closeOutline } from "ionicons/icons";
+  import {
     IonContent,
     IonHeader,
     IonPage,
@@ -44,17 +30,12 @@ export default defineComponent({
     IonButtons,
     IonButton,
     IonIcon,
-  },
-  setup() {
-    const closeAbout = () => {
-      modalController.dismiss();
-    };
-    return {
-      closeOutline,
-      closeAbout,
-    };
-  },
-});
+    modalController,
+  } from "@ionic/vue";
+
+  const closeAbout = () => {
+    modalController.dismiss();
+  };
 </script>
 
 <style scoped>
